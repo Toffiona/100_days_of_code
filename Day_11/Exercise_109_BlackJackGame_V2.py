@@ -87,9 +87,9 @@ def play_game():
             deal = input("Type 'y' to draw another card, type 'n' to pass: ").lower()
             if deal == "y":
                 user_cards.append(deal_card())
-            if deal == "n":
-                end_of_game = True
+            elif deal == "n":
                 print("It's computer turn to draw")
+                end_of_game = True
 
     #Hint 12: Once the user is done, it's time to let the computer play. 
     # The computer should keep drawing cards as long as it has a score less than 17.
