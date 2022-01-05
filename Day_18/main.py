@@ -6,7 +6,8 @@ timmy.color("DodgerBlue")
 timmy.forward(100)
 timmy.right(90)
 
-
+timmy.setheading(90)
+timmy.forward(50)
 
 
 

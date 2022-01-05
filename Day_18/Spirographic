@@ -1,0 +1,22 @@
+from turtle import Turtle, Screen, colormode
+import random
+
+tim = Turtle()
+colormode(255)
+
+def random_colour():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    return tim.color(r , g, b)
+tim.speed(0)
+
+for angle in range(0, 360, 5):
+    random_colour()
+    tim.setheading(angle)
+    tim.circle(100)
+
+
+
+screen = Screen()
+screen.exitonclick()

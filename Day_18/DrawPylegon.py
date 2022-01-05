@@ -12,34 +12,26 @@ def change_color():
     B = randint(0, 255)
     timmy.pencolor(R, G, B)
 
-for _ in range(4):
-    timmy.forward(100)
-    timmy.right(120)
+# for _ in range(4):
+#     timmy.forward(100)
+#     timmy.right(120)
 
-timmy.left(120)
+# timmy.left(120)
 
-change_color()
-for _ in range(4):
-    timmy.right(90)
-    timmy.forward(100)
+# for _ in range(4):
+#     timmy.right(90)
+#     timmy.forward(100)
 
 
-def draw_polygon(angle, turn):
+def draw_polygon(side):
     change_color()
-    for _ in range(turn):
+    angle = 360 / side
+    for _ in range(side):
         timmy.right(angle)
         timmy.forward(100)
-    
-
-draw_polygon(72,5)
-
-draw_polygon(60,6)
-
-draw_polygon(51.43,7)
-
-draw_polygon(45,8)
-         
-
+        
+for draw in range(3, 9):
+    draw_polygon(draw)
 
 screen = Screen()
 screen.exitonclick()
