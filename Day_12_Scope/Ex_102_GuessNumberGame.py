@@ -21,12 +21,17 @@ elif difficulty_level == "hard":
 
 def compare(guess_number, computer_number, attempt):
     """ compare user number and result and return either the guessed number is lower or higher than result """
-    if guess_number < computer_number:
+    if guess_number < computer_number and attempt > 1:
         attempt -= 1
         return f"Too low.\nGuess again.\nYou have {attempt} attempt(s) remaining"
-    elif guess_number > computer_number:
+    elif guess_number > computer_number and attempt > 1:
         attempt -= 1
         return f"Too high.\nGuess again.\nYou have {attempt} attempt(s) remaining"
+    else:
+        return f"You run out of guesses. You loose"
+    
+        
+
 
 end_of_game = False
 attempt_used = 0
@@ -43,7 +48,7 @@ while end_of_game == False and attempt_used <= attempt_no:
                 
         if attempt_no == 0 and guess != number:
             end_of_game = True
-            print("You run out of guesses. You loose")
+            #print("You run out of guesses. You loose")
         
         
 

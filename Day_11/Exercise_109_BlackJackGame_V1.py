@@ -12,6 +12,12 @@
 
 import random
 import art
+import os
+def clearConsole():
+    command = 'clear'
+    if os.name in ('nt', 'dos'):
+        command = 'cls'
+    os.system(command)
 
 def check_blackjack(cards_pack, your_cards):
     if cards_pack[0] in your_cards:
@@ -26,14 +32,13 @@ def draw_card(cards_pack, your_cards):
         scores += card
     if cards_pack[0] in your_cards and scores > 21:
         scores -= 10
-    return your_cards, scores
-       
-        
-        
-    
+    return your_cards, scores     
+                   
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10] 
 play_again = "y"
 while play_again == "y":
+    clearConsole()
+    print(art.logo)
     your_cards = random.sample(cards,2)
     current_score = your_cards[0] + your_cards[1]
     print(f"Your cards: {your_cards}, current score: {current_score}")
@@ -48,20 +53,29 @@ while play_again == "y":
         print("You got a blackjack. You win")
 
     else:
-        continue_draw = input("Type 'y' to get another card, type 'n' to pass: ").lower()
-        
-        if continue_draw == "n":
-            your_final_cards, your_final_score = your_cards, current_score
-            print(f"Your final cards: {your_final_cards}, final score: {your_final_score}")
-            print("Dealer turn to draw")
-        while continue_draw == "y":        
-            your_final_cards, your_final_score = draw_card(cards, your_cards)
-            print (f"your cards: {your_final_cards}, current score: {your_final_score}")
-            continue_draw = input("Type 'y' to get another card, type 'n' to pass: ").lower()
-                           
+        game_is_on = True
+        while game_is_on == True:
+            continue_draw = input("Typed 'y' to get another card, type 'n' to pass: ").lower()
+             
             if continue_draw == "n":
+                your_final_cards, your_final_score = your_cards, current_score
                 print(f"Your final cards: {your_final_cards}, final score: {your_final_score}")
                 print("Dealer turn to draw")
+                        
+            while continue_draw == "y":        
+                your_final_cards, your_final_score = draw_card(cards, your_cards)
+                print (f"your cards: {your_final_cards}, current score: {your_final_score}")
+                new_continue_draw = input("Type 'y' to get another card, type 'n' to pass: ").lower()
+                                                
+                if new_continue_draw == "n" or your_final_score > 21:
+                    continue_draw = "n"
+                    print(f"Your final cards: {your_final_cards}, final score: {your_final_score}")
+                    print("Dealer turn to draw")
+            if your_final_score > 21:
+                game_is_on = False
+                                    
+            
+                
 
     if dealer_score < 17:
         dealer_final_cards, dealer_final_score = draw_card(cards, dealer_cards)
@@ -73,7 +87,7 @@ while play_again == "y":
         print (f"Dealer final cards: {dealer_cards}, final score: {dealer_final_score}")
         
     if your_final_score > 21:
-        print("You went over, loose")
+        print("You went over, you loose")
     else:
         if dealer_final_score > 21:
             print("Dealer went over. You win")

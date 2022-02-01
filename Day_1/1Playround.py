@@ -67,8 +67,11 @@
 
 # greet_with(location = "Sydney", name = "Fiona")
 
-shift = int(input("Type a shift number:\n"))
-if shift > 26:
-    shift = shift % 26 - 1
+# shift = int(input("Type a shift number:\n"))
+# if shift > 26:
+#     shift = shift % 26 - 1
 
-print(shift)
+# print(shift)
+
+for x in range (2,-1,-1):
+    print(x)
