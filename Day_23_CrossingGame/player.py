@@ -13,13 +13,17 @@ class Player(Turtle):
         self.setheading(90)
         self.goto(STARTING_POSITION)
         self.color("white")
+        self.game_is_on = True
         
 
     def move(self):
-        self.forward(MOVE_DISTANCE)
+        if self.game_is_on:
+            self.forward(MOVE_DISTANCE)
 
     def restart(self):
         self.hideturtle()
         self.goto(STARTING_POSITION)
         self.showturtle()
+
+    
 

@@ -10,35 +10,41 @@ screen.setup(width=800, height=600)
 screen.tracer()
 screen.listen()
 
-player = Player()
 
-screen.onkey(player.move, "Up")
+player = Player()
+car = CarManager()
+score = Scoreboard()
+
+screen.onkey(player.move, "Up") 
 
 game_is_on = True
+ 
+loop_time = 0
 
-
-car = CarManager()
-game_loop = 0
-while game_is_on:
+while game_is_on: 
+     
     time.sleep(0.1)
     screen.update()
-    car = CarManager()
-    car.move()
-    
-    
+    loop_time += 1
+    if loop_time % 6 == 0:
+        car.make_car()
+    car.move()   
+  
     
     if player.ycor() > 300:
+        score.score_cal()
         player.restart()
-        car.up_speed()
+        car.increase_speed()
 
+    
+    for the_car in car.car_list:
+        if the_car.distance(player) < 25:
+            game_is_on = False
+            score.game_over()
+            player.game_is_on = False
+            
 
-
-
-
-
-
-
-
+    
 
 
 
