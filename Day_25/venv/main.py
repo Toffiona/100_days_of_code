@@ -22,11 +22,11 @@
 import pandas
 
 data = pandas.read_csv("./Day_25/venv/weather_data.csv")
-#print(type(data))
-#print(data)
+# print(type(data))
+# print(data)
 # temp = (data["temp"])
 # print(type(temp))
-#print(data.to_dict())
+# print(data.to_dict())
 
 # temp_list = data["temp"].to_list()
 # average_temp = sum(temp_list) / len(temp_list)
@@ -43,7 +43,7 @@ data = pandas.read_csv("./Day_25/venv/weather_data.csv")
 # GEt Data in row
 #print(data[data.day == "Monday"])
 
-#PRINT OUT THE ROW WITH THE MAX TEMP
+# #PRINT OUT THE ROW WITH THE MAX TEMP
 # max_temp = data.temp.max()
 # print(data[data.temp == max_temp])
 # print(data.temp)
@@ -54,8 +54,8 @@ data = pandas.read_csv("./Day_25/venv/weather_data.csv")
 # print(monday_temp_f)
 
 #CREATE DATA FRAME & CONVERT to csv file
-data_dict = {"students": ["Amy", "James", "Angela"], "Scores": [76, 80, 56]}
+# data_dict = {"students": ["Amy", "James", "Angela"], "Scores": [76, 80, 56]}
 
-data = pandas.DataFrame(data_dict)
-print(data)
-data.to_csv("./Day-25/venv/new_data.csv")
+# data = pandas.DataFrame(data_dict)
+# print(data)
+# data.to_csv("./Day-25/venv/new_data.csv")

@@ -22,6 +22,7 @@ print(color_dict)
 
 data_frame = pandas.DataFrame(color_dict)
 data_frame.to_csv("./Day_25/Central_Park/new_data.csv")
+print(data_frame)
 
 
 
