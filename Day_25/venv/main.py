@@ -29,6 +29,7 @@ data = pandas.read_csv("./Day_25/venv/weather_data.csv")
 # print(data.to_dict())
 
 # temp_list = data["temp"].to_list()
+# print(temp_list)
 # average_temp = sum(temp_list) / len(temp_list)
 # print(average_temp)
 
@@ -41,7 +42,7 @@ data = pandas.read_csv("./Day_25/venv/weather_data.csv")
 # print(data.condition)
 
 # GEt Data in row
-#print(data[data.day == "Monday"])
+# print(data[data.day == "Monday"])
 
 # #PRINT OUT THE ROW WITH THE MAX TEMP
 # max_temp = data.temp.max()

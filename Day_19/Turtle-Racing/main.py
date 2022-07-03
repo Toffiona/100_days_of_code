@@ -17,9 +17,9 @@ def turtle(name, color, y_num):
     turtle_list.append(name)
 
 
-turtle("tim", 0, -20)
-turtle("tom", 1, 20)
-turtle("jerry", 2, -60)
+turtle("timmy", 0, -20)
+turtle("tommy", 1, 20)
+turtle("jummy", 2, -60)
 turtle("toffee", 3, 60)
 turtle("fioka", 4, -100)
 turtle("rosie", 5, 100)
